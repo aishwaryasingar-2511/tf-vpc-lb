@@ -18,11 +18,11 @@ module "vpc" {
 module "Load-Balancer" {
     source = "../../module/lb"
     env = "dev"
-    appname = "Shopify"
+    appname = "shopify"
     internal="false"
-    type="network"
-    subnets=module.vpc.public_subnet_ids
-    security_group=[module.vpc.security_group]
+    type= "network"
+    subnets= module.vpc.public_subnet_ids
+    security_group= [module.vpc.security_group]
     tags ={
         owner ="LB"
     }
