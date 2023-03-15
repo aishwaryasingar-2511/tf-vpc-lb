@@ -26,4 +26,8 @@ variable "subnets" {
 
 variable "security_group" {
     type = set(string)
+   }  
+
+variable "vpc_id" {
+    type = string
 }

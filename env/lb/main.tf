@@ -16,13 +16,14 @@ module "vpc" {
 }
 
 module "Load-Balancer" {
-    source = "../../module/lb"
-    env = "dev"
-    appname = "shopify"
-    internal="false"
-    type= "network"
-    subnets= module.vpc.public_subnet_ids
-    security_group= [module.vpc.security_group]
+    source          = "../../module/lb"
+    env             = "dev"
+    appname         = "shopify"
+    internal        = "false"
+    type            = "application"
+    subnets         = module.vpc.public_subnet_ids
+    security_group  = [module.vpc.security_group]
+    vpc_id          = module.vpc.vpc_id
     tags ={
         owner ="LB"
     }

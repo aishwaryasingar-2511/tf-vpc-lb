@@ -4,3 +4,6 @@ output "public_subnet_ids"{
 output "security_group"{
     value =aws_security_group.task-sg.id
 }
+output "vpc_id" {
+  value = aws_vpc.ownvpc.id
+}
